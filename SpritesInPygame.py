@@ -29,6 +29,22 @@ while run == True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    
+        if event.type == pygame.KEYDOWN:
+             if event.key == pygame.K_w:
+                 rocket1.rect.y -= 10
+             if event.key == pygame.K_s:
+                  rocket1.rect.y += 10
+             if event.key == pygame.K_a:
+                 rocket1.rect.x -= 10
+             if event.key == pygame.K_d:
+                 rocket1.rect.x += 10
+    if rocket1.rect.y > 390:
+        rocket1.rect.y = 390
+    if rocket1.rect.y < 0:
+        rocket1.rect.y = 0
+    if rocket1.rect.x > 470:
+        rocket1.rect.x = 470
+    if rocket1.rect.x < 0:
+        rocket1.rect.x = 0
 
     pygame.display.update()
